@@ -1,31 +1,30 @@
-from tkinter import *
-import os
-from os import path
-from datetime import datetime;
+from os import system, path
+from tkinter import Tk, Label,Button,N,E,W,S
 
 root=Tk()
 root.configure(background="white")
 
-def onClickCreateDataSet():    
-    os.system("python3 dataSetCreater.py")
+def onClickCreateDataSet():
+
+    system("python3 dataSetCreater.py")
     print("Data Set created")
-    
+
 def onClickTrainDataSet():
-    os.system("python3 trainer.py")
+    system("python3 trainer.py")
     print("Trained classifier")
 
 def onClickRecognize1():
-    os.system("python3 tester1.py")
+    system("python3 tester1.py")
 
 def onClickRecognize2():
-    os.system("python3 tester2.py")
+    system("python3 tester2.py")
 
 def onclickAttendanceSheet():
    attendanceRecordXlsFileName = "Attendance.xls"
    if(path.exists(attendanceRecordXlsFileName) and path.isfile(attendanceRecordXlsFileName)):
-    os.system("libreoffice --calc Attendance.xls") #or os.system("localc Attendance.xls")
+    system("libreoffice --calc Attendance.xls") #or system("localc Attendance.xls")
    else:
-    print("Attendance.xls file does't exists") 
+    print("Attendance.xls file does't exists")
 
 def onClickExit():
     root.destroy()

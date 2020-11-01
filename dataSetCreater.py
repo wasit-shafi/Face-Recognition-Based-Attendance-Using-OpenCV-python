@@ -3,10 +3,10 @@ import cv2
 def generate_dataset(img, img_id):
     global userId, userName  # using globale variables for userId & userName
     cv2.imwrite("dataset/" + userName + "." + str(userId) + "." + str(img_id) + ".jpg", img)
-  
+
 def draw_boundary(img, classifier, scaleFactor, minNeighbours, color,text):
     gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    
+
     features = classifier.detectMultiScale(gray_img, scaleFactor, minNeighbours)
     coords = []
 
@@ -25,21 +25,23 @@ def detect(img, faceCascade, img_id):
     return img
 
 # Main
-
 faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 videoCapture = cv2.VideoCapture(0)
 
-userId = int(input("Enter user id : "))
-userName = input("Enter user name : ")
+userId = 123
+userName = 'noname'
 
-print("Press 'q' to stop creating dataSet.")
-print("Press any key to start...")
-input("")
+#userId = int(input("Enter user id : "))
+#userName = input("Enter user name : ")
+
+#print("Press 'q' to stop creating dataSet.")
+#print("Press any key to start...")
+#input("")
 
 imgId = 1  #data set images of userID  will start form 1...
 while True:
     _, img = videoCapture.read()
-     
+
     img = detect(img, faceCascade, imgId)
     cv2.imshow("Data Set Creator", img)
     imgId = imgId + 1
