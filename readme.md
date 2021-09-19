@@ -11,12 +11,3 @@ Research Internship on Face Recognition Based Attendance System Using [OpenCV](h
 **STEP 4** : Click on Attendance to record Attendance(this will create Attendance.xls file)
 
 **STEP 5** : Click Attendance Sheet to view the attendance sheet
-
-
-
-
-> pip3 install
-** **
-** **
-** **
-**pip install opencv-contrib-python**
